@@ -20,7 +20,7 @@ try {
 $moviedata = $pdo->query("SELECT * from movies");
 $coachdata = $pdo->query("SELECT * from series");
 ?>
-
+<!-- gewerkt aan de spaties -->
 <html lang="nl">
 <head>  
 </head>
@@ -28,29 +28,51 @@ $coachdata = $pdo->query("SELECT * from series");
      <h1>Welkom op het Netland beheerders panneel</h1>
      <h2>Films</h2>
      <table>
-          <?php foreach ($moviedata as $row){
-               ?>
-               <tr>
-                    <td><?php echo "title: " . $row['title']; ?></td>
-                    <td><?php echo "duur: " . $row['duur']; ?></td>
-               </tr>
-               <?php
+          <?php 
+          foreach ($moviedata as $row){
+          ?>
+          <tr>
+               <td>
+                    <?php echo "title: " .  $row['title']; ?>
+               </td>
+               <td>
+                    <?php echo "duur: " . $row['duur']; ?>
+               </td>
+               <td>
+                    <form action="films.php" method="get">
+                         <a href="films.php">
+                              <input name="link" type="submit" value="<?php echo $row['id'] ?>">
+                         </a>
+                    </form>
+               </td>
+          </tr>
+          <?php
           }
           ?>
      </table>
      <h2>Series</h2>
      <table>
-          <?php foreach ($coachdata as $rij){
-        ?>
-        
-        <tr>
-          <td><?php echo "title: " . $rij['title']; ?></td>
-          <td><?php echo "seasons: " . $rij['seasons']; ?></td>
-            
-        </tr>
-        <?php
-    }
-    ?>
+          <?php 
+          foreach ($coachdata as $rij){
+          ?>
+          <tr>
+               <td>
+                    <?php echo "title: " . $rij['title']; ?>
+               </td>
+               <td>
+                    <?php echo "seasons: " . $rij['seasons']; ?>
+               </td>
+               <td>
+                    <form action="series.php" method="get">
+                         <a href="series.php">
+                              <input name="link" type="submit" value="<?php echo $rij['id'] ?>">
+                         </a>
+                    </form>
+               </td>
+          </tr>
+          <?php
+          }
+          ?>
      </table>
 </body>
 
