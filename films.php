@@ -26,7 +26,7 @@ $moviedata = $pdo->query('SELECT * from movies where id ='. $_GET['link']);
     <table>
         <?php
         foreach ($moviedata as $row){
-        ?>
+            ?>
         <tr>
             <td><?php echo "title: " .  $row['title']; ?></td>
         </tr>

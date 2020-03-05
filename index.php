@@ -29,8 +29,8 @@ $coachdata = $pdo->query("SELECT * from series");
      <h2>Films</h2>
      <table>
           <?php 
-          foreach ($moviedata as $row){
-          ?>
+            foreach ($moviedata as $row){
+               ?>
           <tr>
                <td>
                     <?php echo "title: " .  $row['title']; ?>
@@ -47,14 +47,14 @@ $coachdata = $pdo->query("SELECT * from series");
                </td>
           </tr>
           <?php
-          }
-          ?>
+            }
+            ?>
      </table>
      <h2>Series</h2>
      <table>
           <?php 
-          foreach ($coachdata as $rij){
-          ?>
+            foreach ($coachdata as $rij){
+               ?>
           <tr>
                <td>
                     <?php echo "title: " . $rij['title']; ?>
@@ -71,8 +71,8 @@ $coachdata = $pdo->query("SELECT * from series");
                </td>
           </tr>
           <?php
-          }
-          ?>
+            }
+            ?>
      </table>
 </body>
 

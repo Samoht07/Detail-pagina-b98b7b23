@@ -26,7 +26,7 @@ $coachdata = $pdo->query('SELECT * from series where id ='. $_GET['link']);
     <table>
         <?php
         foreach ($coachdata as $row){
-        ?>
+            ?>
         <tr>
             <td><?php echo "title: " .  $row['title']; ?></td>
         </tr>
